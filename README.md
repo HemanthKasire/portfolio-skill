@@ -1,11 +1,8 @@
-# Portfolio Skill
+# Hemanth Reddy K — Portfolio
 
-React portfolio with animated sections, a Three.js hero, project cards,
-certifications, a downloadable CV and an EmailJS contact form.
+Personal portfolio with work experience, education, skills, certifications and personal cloud projects. Built from a React portfolio template and personalised for Hemanth Reddy K.
 
 ## Run locally
-
-Install Node.js and npm, then run:
 
 ```sh
 cd frontend
@@ -13,37 +10,22 @@ npm ci
 npm start
 ```
 
-To create a production build:
+## Production build
 
 ```sh
+cd frontend
 npm run build
 ```
 
-The generated website is in `frontend/build`.
+Deploy the `frontend/build` directory using a static hosting provider. For Vercel, use `frontend` as the project root, `npm run build` as the build command and `build` as the output directory.
 
-## Personalise
+## Update details
 
-Edit `frontend/src/data/PortfolioContent.js` for names, descriptions, skills,
-projects, certifications and contact links. Replace the images under
-`frontend/src/assets/images` and the CV at `frontend/src/assets/CV/my_cv.pdf`.
-The supplied project currently contains template information for Uzair; review
-all claims, links, images and the CV before publishing it as your own portfolio.
+Edit `frontend/src/data/PortfolioContent.js`. Contact links use email drafts and need no server or API keys. The original template author's photo, certificates and CV are excluded. No resume PDF or phone number is published.
 
-## Contact form
+## Verify
 
-Copy `frontend/.env.example` to `frontend/.env.local`, then enter your EmailJS
-service ID, template ID and public key. Restart the development server after
-changing these values. They are browser-visible configuration; never put an
-EmailJS private key or another secret in a `REACT_APP_` variable. Without this
-configuration the website builds, but the contact form cannot send messages.
-
-## Deployment
-
-Use `frontend` as the project root, `npm run build` as the build command and
-`build` as the output directory for a static host. This repository contains the
-source; uploading it to GitHub does not itself publish a live website.
-
-## Source and attribution
-
-Imported from the supplied `Portfolio-React-main` folder. Preserve applicable
-upstream attribution and licence terms; no new licence is granted by this upload.
+```sh
+cd frontend
+CI=true npm test -- --watchAll=false --runInBand
+```

@@ -1,0 +1,12 @@
+.experience {padding: 90px 24px; scroll-margin-top: 80px;}
+.experience-container {max-width: 1200px; margin: auto;}
+.experience-list {display: grid; gap: 24px; margin-top: 36px;}
+.experience-card {padding: 28px; border: 1px solid rgba(186,128,255,.15); background: rgba(255,255,255,.03); border-radius: 20px;}
+.experience-card h3 {font-size: 22px; margin: 10px 0; color: var(--text-primary);}
+.experience-card h4, .experience-date {color: var(--accent); margin-bottom: 12px;}
+.experience-card p, .experience-card li {color: var(--text-secondary); line-height: 1.8;}
+.experience-card ul {padding-left: 20px;}
+.education-card {margin-top: 24px;}
+.btn-primary {text-decoration: none;}
+@media(max-width:600px) {.experience {padding: 60px 16px;} .experience-card {padding: 20px;} .hero-title {overflow-wrap: anywhere;}}
+@media(prefers-reduced-motion:reduce) {*, *::before, *::after {animation: none !important; transition: none !important; scroll-behavior: auto !important;}}
