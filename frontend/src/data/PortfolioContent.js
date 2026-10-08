@@ -65,16 +65,28 @@ export const PortfolioContent = {
     ],
     "skills": [
       {
-        "name": "Development",
-        "description": "Python, Django, JavaScript and REST APIs"
+        "name": "Python & Django",
+        "description": "Web applications"
       },
       {
-        "name": "Production support",
-        "description": "Troubleshooting, bug fixing and root cause analysis"
+        "name": "JavaScript, HTML & CSS",
+        "description": "Frontend development"
       },
       {
-        "name": "Cloud operations",
-        "description": "Deployments, Docker, Linux and DNS configuration"
+        "name": "SQL & Databases",
+        "description": "Database integration"
+      },
+      {
+        "name": "AWS & Cloudflare",
+        "description": "Application deployment"
+      },
+      {
+        "name": "Docker, Linux & OCI",
+        "description": "Personal cloud services"
+      },
+      {
+        "name": "Production Support",
+        "description": "Troubleshooting & maintenance"
       }
     ]
   },
@@ -236,7 +248,24 @@ export const PortfolioContent = {
         }
       ]
     },
-    "summary": []
+    "summary": [
+      {
+        "number": "17",
+        "label": "Technical skills"
+      },
+      {
+        "number": "10",
+        "label": "Project entries"
+      },
+      {
+        "number": "3",
+        "label": "Professional roles"
+      },
+      {
+        "number": "3",
+        "label": "Certifications"
+      }
+    ]
   },
   "projects": {
     "tag": "Selected Work",

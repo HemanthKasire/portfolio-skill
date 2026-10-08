@@ -2,6 +2,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Contact, { emailDraft } from './components/Contact';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
+import About from './components/About';
+import Certifications from './components/Certifications';
+import PortfolioContent from './data/PortfolioContent';
 
 test('contact uses the portfolio owner and creates a correctly encoded email draft', () => {
   render(<Contact />);
@@ -23,4 +26,22 @@ test('skill filters show the matching category without percentage ratings', () =
   expect(screen.getByRole('heading', {name: 'Django'})).toBeInTheDocument();
   expect(screen.queryByRole('heading', {name: 'Bootstrap'})).not.toBeInTheDocument();
   expect(screen.queryByText(/\d+%/)).not.toBeInTheDocument();
+});
+
+test('about retains animated bars with factual skill descriptions', () => {
+  const { container } = render(<About />);
+  expect(container.querySelectorAll('.skill-bar')).toHaveLength(PortfolioContent.about.skills.length);
+  expect(screen.getByText('Python & Django')).toBeInTheDocument();
+  expect(screen.queryByText(/\d+%/)).not.toBeInTheDocument();
+});
+test('certification details open and close with keyboard and restore focus', () => {
+  render(<Certifications />);
+  const button = screen.getAllByRole('button', {name: 'View Details →'})[0];
+  button.focus();
+  fireEvent.click(button);
+  expect(screen.getByRole('dialog', {name: 'Cisco Certified Network Technician'})).toBeInTheDocument();
+  expect(document.body.style.overflow).toBe('hidden');
+  fireEvent.keyDown(document, {key: 'Escape'});
+  expect(document.body.style.overflow).not.toBe('hidden');
+  expect(button).toHaveFocus();
 });

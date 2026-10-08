@@ -34,7 +34,7 @@ export default function About() {
                 {paragraph}
               </p>
             ))}
-            
+
             <div className="about-stats">
               {about.stats.map((stat, index) => (
                 <div key={index} className="about-stat">
@@ -56,9 +56,17 @@ export default function About() {
               <div key={index} className="skill-item">
                 <div className="skill-header">
                   <span className="skill-name">{skill.name}</span>
-                  
+                  <span className="skill-percentage">{skill.description}</span>
                 </div>
-                <p className="about-text">{skill.description}</p>
+                <div className="skill-bar" aria-hidden="true">
+                  <motion.div
+                    className="skill-progress"
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  />
+                </div>
               </div>
             ))}
           </motion.div>

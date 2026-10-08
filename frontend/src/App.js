@@ -17,9 +17,9 @@ function App() {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMousePosition({ 
-        x: e.clientX, 
-        y: e.clientY 
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
       });
       setIsHovering(true);
     };
@@ -47,10 +47,10 @@ function App() {
       <div
         className="dark-overlay"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            transparent 0%, 
-            rgba(6, 6, 14, 0.85) 35%, 
-            rgba(6, 6, 14, 0.95) 60%, 
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px,
+            transparent 0%,
+            rgba(6, 6, 14, 0.85) 35%,
+            rgba(6, 6, 14, 0.95) 60%,
             #06060e 100%)`,
           opacity: 1,
           transition: "background 0.15s ease-out",
@@ -60,10 +60,10 @@ function App() {
       <div
         className="global-spotlight"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            rgba(186, 128, 255, 0.25) 0%, 
-            rgba(186, 128, 255, 0.12) 15%, 
-            rgba(186, 128, 255, 0.04) 30%, 
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px,
+            rgba(186, 128, 255, 0.25) 0%,
+            rgba(186, 128, 255, 0.12) 15%,
+            rgba(186, 128, 255, 0.04) 30%,
             transparent 55%)`,
           opacity: isHovering ? 1 : 0,
           transition: "opacity 0.4s ease",
@@ -73,9 +73,9 @@ function App() {
       <div
         className="global-spotlight-secondary"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            rgba(186, 128, 255, 0.12) 0%, 
-            rgba(186, 128, 255, 0.04) 25%, 
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px,
+            rgba(186, 128, 255, 0.12) 0%,
+            rgba(186, 128, 255, 0.04) 25%,
             transparent 50%)`,
           opacity: isHovering ? 1 : 0,
           transition: "opacity 0.4s ease",
@@ -89,8 +89,8 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Experience />
       <Skills />
+      <Experience />
       <Projects />
       <Certifications />
       <Contact />

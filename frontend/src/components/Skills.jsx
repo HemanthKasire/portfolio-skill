@@ -64,17 +64,26 @@ export default function Skills() {
               className="skill-card-page"
             >
               <div className="skill-card-header">
-                <img 
-                  src={skill.icon} 
-                  alt={skill.name} 
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
                   className="skill-card-icon"
                   width="32"
                   height="32"
                 />
                 <div className="skill-card-info">
                   <h3 className="skill-card-name">{skill.name}</h3>
-                  
+                  <span className="skill-card-level">Applied</span>
                 </div>
+              </div>
+              <div className="skill-bar-container" aria-hidden="true">
+                <motion.div
+                  className="skill-bar-progress"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: true }}
+                />
               </div>
               <p className="skill-card-description">{skill.description}</p>
             </motion.div>
